@@ -13,7 +13,12 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.0.0-rc11"
+    "@nuxtjs/axios": "^4.4.0",
+    "leaflet-fullscreen": "^1.0.2",
+    "nuxt": "^1.0.0-rc11",
+    "onsenui": "2.6.x",
+    "vue-onsenui": "2.2.x",
+    "vue2-leaflet": "0.0.54"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

@@ -1,29 +1,30 @@
-<template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        nuxt
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
-</template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import VueOnsen from 'vue-onsenui'
+import Vue2Leaflet from 'vue2-leaflet'
+import leafletfullscreen from 'leaflet-fullscreen'
+import CustomToolbar from '../components/CustomToolbar.vue'
+import AppNavigator from '../components/AppNavigator.vue'
+import vmap from '../plugins/vue2-leaflet/src/components/Map.vue'
+import vtilelayer from '../plugins/vue2-leaflet/src/components/TileLayer.vue'
+import vmarker from '../plugins/vue2-leaflet/src/components/Marker.vue'
 
 export default {
+  render: h => h(AppNavigator),
+  beforeCreate() {
+  // Shortcut for Material Design
+  Vue.prototype.md = this.$ons.platform.isAndroid()
+},
   components: {
-    Logo
+    CustomToolbar,
+    vmap,
+    vtilelayer,
+    vmarker,
   }
 }
+
+
+
 </script>
 
 <style>

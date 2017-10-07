@@ -13,6 +13,15 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  css: [
+  // Загрузить модуль node.js
+  //'hover.css/css/hover-min.css',
+  // CSS-файл в проекте
+  '@/assets/css/theme.css',
+  '@/assets/css/leaflet.css',
+  '@/assets/css/leaflet.fullscreen.css',
+  '@/assets/css/leaflet.css'
+],
   /*
   ** Customize the progress bar color
   */
@@ -20,19 +29,13 @@ module.exports = {
   /*
   ** Build configuration
   */
+  modules: [
+    '@nuxtjs/axios',
+  ],
+    plugins: ['~/plugins/vue-onsenui', '~/plugins/vue2-leaflet', '~/plugins/leaflet-fullscreen'],
   build: {
-    /*
-    ** Run ESLint on save
-    */
-    extend (config, ctx) {
-      if (ctx.dev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
+    vendor: ['vue-onsenui', '~/plugins/vue2leaflet.js', 'leaflet-fullscreen'],
+
+
   }
 }
